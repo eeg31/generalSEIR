@@ -34,7 +34,9 @@ simSEIRV <- function(N, R0=NULL, beta=NULL,
     par <- getProps(model, omega, gamma, rho, sigma, epsilon)
   }
 
-  nevents <- 13
+  nevents <- as.integer(13)
+  tmax <- as.integer(tmax)
+  inc <- as.integer(inc)
 
   epsilon <- par$epsilon
   omega <- par$omega
@@ -56,7 +58,7 @@ simSEIRV <- function(N, R0=NULL, beta=NULL,
     I0 <- max(1, I)
   }
 
-  par <- c(beta, gamma, sigma, rho, epsilon, omega, b, m, v)
+  par <- as.double(c(beta, gamma, sigma, rho, epsilon, omega, b, m, v))
   spec <- as.integer(c(whichBeta,whichSigma,whichGamma))
 
   #simulate nsim times and plot together
