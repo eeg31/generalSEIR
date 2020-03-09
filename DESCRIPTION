@@ -1,7 +1,7 @@
 Package: generalSEIR
 Type: Package
 Title: generalised SEIR model with vaccination
-Version: 0.1.2
+Version: 0.1.3
 Author: Emma Glennon
 Imports: Rcpp (>= 0.11.0) 
 Depends: deSolve (>= 1.01)

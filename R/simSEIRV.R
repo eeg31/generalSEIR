@@ -6,7 +6,7 @@
 #' @export simSEIRV
 
 simSEIRV <- function(N, R0=NULL, beta=NULL,
-                 S0, I0, E0,
+                 S0=NULL, I0=NULL, E0=NULL,
                  model=NULL,
                  gamma=0, sigma=0, rho=0, epsilon=0, omega=0,
                  v=0,
