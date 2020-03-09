@@ -17,7 +17,10 @@ simulate1 <- function(state, par, spec, nevents, tmax, inc) {
     .Call('_generalSEIR_simulate1', PACKAGE = 'generalSEIR', state, par, spec, nevents, tmax, inc)
 }
 
+simulateVax <- function(state, par, spec, nevents, tmax, inc) {
+    .Call('_generalSEIR_simulateVax', PACKAGE = 'generalSEIR', state, par, spec, nevents, tmax, inc)
+}
+
 simFixed <- function(var, par, spec, nevents, tmax) {
     .Call('_generalSEIR_simFixed', PACKAGE = 'generalSEIR', var, par, spec, nevents, tmax)
 }
-
