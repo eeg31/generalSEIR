@@ -1,14 +1,14 @@
 Package: generalSEIR
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.1
-Author: Who wrote it
+Title: generalised SEIR model with vaccination
+Version: 0.1.2
+Author: Emma Glennon
 Imports: Rcpp (>= 0.11.0) 
 Depends: deSolve (>= 1.01)
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Maintainer: Emma Glennon <eeglennon@gmail.com>
+Description: simulates SEIR model with vaccination, along with
+    various helper functions to calculate equilibria and params
+License: GNU 3
 Encoding: UTF-8
 LazyData: true
 LinkingTo: Rcpp
