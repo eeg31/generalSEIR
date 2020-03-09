@@ -58,7 +58,7 @@ simSEIRV <- function(N, R0=NULL, beta=NULL,
     I0 <- max(1, I)
   }
 
-  par <- as.double(c(beta, gamma, sigma, rho, epsilon, omega, b, m, v))
+  par <- as.numeric(c(beta, gamma, sigma, rho, epsilon, omega, b, m, v))
   spec <- as.integer(c(whichBeta,whichSigma,whichGamma))
 
   #simulate nsim times and plot together
