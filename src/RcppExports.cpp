@@ -78,6 +78,64 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// stepModelVax
+IntegerVector stepModelVax(IntegerVector state, NumericVector r, IntegerVector spec, int nevents);
+RcppExport SEXP _generalSEIR_stepModelVax(SEXP stateSEXP, SEXP rSEXP, SEXP specSEXP, SEXP neventsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< IntegerVector >::type state(stateSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type r(rSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type spec(specSEXP);
+    Rcpp::traits::input_parameter< int >::type nevents(neventsSEXP);
+    rcpp_result_gen = Rcpp::wrap(stepModelVax(state, r, spec, nevents));
+    return rcpp_result_gen;
+END_RCPP
+}
+// tauleapVax
+IntegerVector tauleapVax(IntegerVector state, NumericVector r, IntegerVector spec, int nevents, double tau);
+RcppExport SEXP _generalSEIR_tauleapVax(SEXP stateSEXP, SEXP rSEXP, SEXP specSEXP, SEXP neventsSEXP, SEXP tauSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< IntegerVector >::type state(stateSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type r(rSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type spec(specSEXP);
+    Rcpp::traits::input_parameter< int >::type nevents(neventsSEXP);
+    Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
+    rcpp_result_gen = Rcpp::wrap(tauleapVax(state, r, spec, nevents, tau));
+    return rcpp_result_gen;
+END_RCPP
+}
+// getRatesVax
+NumericVector getRatesVax(IntegerVector var, NumericVector par, int nevents);
+RcppExport SEXP _generalSEIR_getRatesVax(SEXP varSEXP, SEXP parSEXP, SEXP neventsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< IntegerVector >::type var(varSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type par(parSEXP);
+    Rcpp::traits::input_parameter< int >::type nevents(neventsSEXP);
+    rcpp_result_gen = Rcpp::wrap(getRatesVax(var, par, nevents));
+    return rcpp_result_gen;
+END_RCPP
+}
+// simulateVax
+NumericVector simulateVax(IntegerVector state, NumericVector par, IntegerVector spec, int nevents, int tmax, int inc);
+RcppExport SEXP _generalSEIR_simulateVax(SEXP stateSEXP, SEXP parSEXP, SEXP specSEXP, SEXP neventsSEXP, SEXP tmaxSEXP, SEXP incSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< IntegerVector >::type state(stateSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type par(parSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type spec(specSEXP);
+    Rcpp::traits::input_parameter< int >::type nevents(neventsSEXP);
+    Rcpp::traits::input_parameter< int >::type tmax(tmaxSEXP);
+    Rcpp::traits::input_parameter< int >::type inc(incSEXP);
+    rcpp_result_gen = Rcpp::wrap(simulateVax(state, par, spec, nevents, tmax, inc));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_generalSEIR_stepModel", (DL_FUNC) &_generalSEIR_stepModel, 4},
@@ -85,6 +143,10 @@ static const R_CallMethodDef CallEntries[] = {
     {"_generalSEIR_getRates", (DL_FUNC) &_generalSEIR_getRates, 3},
     {"_generalSEIR_simulate1", (DL_FUNC) &_generalSEIR_simulate1, 6},
     {"_generalSEIR_simFixed", (DL_FUNC) &_generalSEIR_simFixed, 5},
+    {"_generalSEIR_stepModelVax", (DL_FUNC) &_generalSEIR_stepModelVax, 4},
+    {"_generalSEIR_tauleapVax", (DL_FUNC) &_generalSEIR_tauleapVax, 5},
+    {"_generalSEIR_getRatesVax", (DL_FUNC) &_generalSEIR_getRatesVax, 3},
+    {"_generalSEIR_simulateVax", (DL_FUNC) &_generalSEIR_simulateVax, 6},
     {NULL, NULL, 0}
 };
 

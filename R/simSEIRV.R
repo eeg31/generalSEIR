@@ -1,6 +1,7 @@
 #' stochastic simulation function
 #' @include RcppExports.R
 #' @include getBeta.R
+#' @include getEquil.R
 #' @include getProps.R
 #' @include models.rda
 #' @export simSEIRV

@@ -17,10 +17,23 @@ simulate1 <- function(state, par, spec, nevents, tmax, inc) {
     .Call('_generalSEIR_simulate1', PACKAGE = 'generalSEIR', state, par, spec, nevents, tmax, inc)
 }
 
+simFixed <- function(var, par, spec, nevents, tmax) {
+    .Call('_generalSEIR_simFixed', PACKAGE = 'generalSEIR', var, par, spec, nevents, tmax)
+}
+
+stepModelVax <- function(state, r, spec, nevents) {
+    .Call('_generalSEIR_stepModelVax', PACKAGE = 'generalSEIR', state, r, spec, nevents)
+}
+
+tauleapVax <- function(state, r, spec, nevents, tau) {
+    .Call('_generalSEIR_tauleapVax', PACKAGE = 'generalSEIR', state, r, spec, nevents, tau)
+}
+
+getRatesVax <- function(var, par, nevents) {
+    .Call('_generalSEIR_getRatesVax', PACKAGE = 'generalSEIR', var, par, nevents)
+}
+
 simulateVax <- function(state, par, spec, nevents, tmax, inc) {
     .Call('_generalSEIR_simulateVax', PACKAGE = 'generalSEIR', state, par, spec, nevents, tmax, inc)
 }
 
-simFixed <- function(var, par, spec, nevents, tmax) {
-    .Call('_generalSEIR_simFixed', PACKAGE = 'generalSEIR', var, par, spec, nevents, tmax)
-}
