@@ -19,8 +19,8 @@ simSEIRV <- function(N, R0=NULL, beta=NULL,
     print('either R0 or beta must be nonzero')
     return()
   }
-  if(is.null(model) & is.null(submodel) & any(is.null(c(whichBeta, whichSigma, whichGamma)))) {
-    print('must specify either a model ID, set of specifications, or input a submodel object')
+  if(is.null(model) & is.null(submodel)) {
+    print('must specify a model ID, set of specifications, or input a submodel object')
     return()
   }
   if(is.null(m)) {
@@ -30,12 +30,7 @@ simSEIRV <- function(N, R0=NULL, beta=NULL,
   par <- NA
   if(!is.null(submodel)){
     par <- submodel
-  } else if(any(is.null(c(whichBeta, whichSigma, whichGamma)))) {
-    par <- getProps(model, omega, gamma, rho, sigma, epsilon)
   } else {
-    model <- which(models$whichBeta==whichBeta &
-                   models$whichGamma==whichGamma &
-                   models$whichSigma==whichSigma)
     par <- getProps(model, omega, gamma, rho, sigma, epsilon)
   }
 
